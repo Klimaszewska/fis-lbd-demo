@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-3">
+    <ul class="list-group">
+      <a [routerLink]=""
+         class="list-group-item"
+         *ngFor="let expense of expenses"
+         (click)="onSelect(expense)">
+        {{expense.id}}. {{expense.name}}, {{expense.amountSpent}} PLN</a>
+    </ul>
+
+  </div>
+</div>
+
+<div class="row col-md-offset-1" *ngIf="selectedExpense">
+  <div class="col col-md-3">
+    {{selectedExpense.name | uppercase}} - {{selectedExpense.category | uppercase}}
+    <form (submit)="checkTestField(testfield.value)">
+      <label for="myCustomName">Edit name:</label>
+      <input type="text" #testfield [(ngModel)]="selectedExpense.name" id="myCustomName" name="myName">
+    </form>
+  </div>
+</div>
+
