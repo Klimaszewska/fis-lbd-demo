@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
+import {CategoryService} from '../../services/category.service';
 
 @Component({
   selector: 'app-category-detail',
@@ -10,10 +11,13 @@ export class CategoryDetailComponent implements OnInit {
 
   idPassedFromAnotherComponent: number;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.idPassedFromAnotherComponent = +this.route.snapshot.paramMap.get('id');
   }
 
+  back(): void {
+    this.router.navigate(['/categories']);
+  }
 }

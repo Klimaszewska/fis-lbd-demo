@@ -11,10 +11,12 @@ export class CategoryService {
 
   private sampleUrl = 'https://my-json-server.typicode.com/typicode/demo/posts';
 
+  expenseCategories: ExpenseCategory[];
+
   constructor(private http: HttpClient) { }
 
 
-  getAllCategories() {
+  static getAllCategories() {
     return [
       new ExpenseCategory(1, 'Savings', false),
       new ExpenseCategory(2, 'Services', true),
