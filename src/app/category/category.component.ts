@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ExpenseCategory} from '../category';
 import {CategoryService} from '../services/category.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-category',
@@ -27,5 +28,9 @@ export class CategoryComponent implements OnInit {
 
   selectCategory(category) {
     this.selectedCategory = category;
+  }
+
+  editCategory(category: ExpenseCategory) {
+    category.title = 'Changed title';
   }
 }

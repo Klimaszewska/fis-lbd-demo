@@ -16,9 +16,9 @@ export class CategoryService {
 
   getAllCategories() {
     return [
-      new ExpenseCategory('Savings', false),
-      new ExpenseCategory('Services', true),
-      new ExpenseCategory('Shopping', true),
+      new ExpenseCategory(1, 'Savings', false),
+      new ExpenseCategory(2, 'Services', true),
+      new ExpenseCategory(3, 'Shopping', true),
     ];
   }
 

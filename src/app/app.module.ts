@@ -9,6 +9,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {RouterModule} from '@angular/router';
 import {ExpenseService} from './services/expense.service';
 import {CategoryService} from './services/category.service';
+import { CategoryDetailComponent } from './category-detail/category-detail.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import {CategoryService} from './services/category.service';
     AppComponent,
     ExpenseComponent,
     CategoryComponent,
+    CategoryDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,7 +25,8 @@ import {CategoryService} from './services/category.service';
     HttpClientModule,
     RouterModule.forRoot([
       {path: 'expenses', component: ExpenseComponent},
-      {path: 'categories', component: CategoryComponent}
+      {path: 'categories', component: CategoryComponent},
+      {path: 'categories/:id', component: CategoryDetailComponent}
     ])
   ],
   providers: [ExpenseService, CategoryService],

@@ -1,14 +1,27 @@
-<div>
+<div class="container">
   <ul class="list-group">
-    <a [routerLink]="" class="list-group-item" *ngFor="let cat of category" (click)="selectCategory(cat)">{{cat.title}}</a>
+    <div class="row" *ngFor="let cat of category">
+      <div class="col-md-3">
+        <button type="button" class="list-group-item" (click)="selectCategory(cat)">{{cat.title}}</button>
+      </div>
+      <div class="col-md-3">
+        <a [routerLink]="['/categories', cat.id]">
+          <button type="button" class="btn-success" (click)="editCategory(cat)">Edit</button>
+        </a>
+      </div>
+    </div>
+
+    <!--<a [routerLink]="['/categories', category.id]" class="list-group-item" *ngFor="let cat of category" (click)="selectCategory(cat)">{{cat.title}}</a>-->
     <!--<button class="list-group-item" *ngFor="let cat of category" (click)="selectCategory(cat)">{{cat.title}}</button>-->
 
   </ul>
 </div>
 
-<div *ngIf="selectedCategory" class="col-md-offset-1">
-  {{selectedCategory.title}}
-  <hr>
-  <label for="categoryName">Change the category name:</label>
-  <input type="text" id="categoryName" [(ngModel)]="selectedCategory.title" name="categoryName">
+<div class="container">
+  <div class="row" *ngIf="selectedCategory">
+    {{selectedCategory.title}}
+    <hr>
+    <label for="categoryName">Change the category name:</label>
+    <input type="text" id="categoryName" [(ngModel)]="selectedCategory.title" name="categoryName">
+  </div>
 </div>
