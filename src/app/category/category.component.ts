@@ -17,20 +17,10 @@ export class CategoryComponent implements OnInit {
   constructor(private categoryService: CategoryService) { }
 
   ngOnInit() {
-    // this.category = this.categoryService.getAllCategories();
-/*    fetch('https://my-json-server.typicode.com/typicode/demo/posts')
-      .then(response => response.json())
-      .then(json => console.log(json));*/
-
     this.categoryService.getHttpData().subscribe(category => this.category = category);
-
   }
 
   selectCategory(category) {
     this.selectedCategory = category;
-  }
-
-  editCategory(category: ExpenseCategory) {
-    category.title = 'Changed title';
   }
 }
