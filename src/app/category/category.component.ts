@@ -10,6 +10,8 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class CategoryComponent implements OnInit {
 
+  // test change
+
   category: ExpenseCategory[];
 
   selectedCategory: ExpenseCategory;
