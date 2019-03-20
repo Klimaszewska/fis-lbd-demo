@@ -18,7 +18,7 @@ export class ExpenseComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.expenses = this.expenseService.getExpenses();
+    this.expenses = this.expenseService.allExpenses;
   }
 
   onSelect(expense: Expense) {

@@ -7,6 +7,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {CategoryModule} from './category/category.module';
 import {ExpenseModule} from './expense/expense.module';
 import {RouterModule} from '@angular/router';
+import {ExpenseEditorModule} from './expense-editor/expense-editor.module';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import {RouterModule} from '@angular/router';
       {path: 'categories/:id', component: CategoryDetailComponent}
     ]),*/
     CategoryModule,
-    ExpenseModule
+    ExpenseModule,
+    ExpenseEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
